@@ -1,0 +1,21 @@
+group 'com.panghu'
+version '1.0.0'
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter-data-jpa:2.2.2.RELEASE")
+
+
+    compile(
+            "base-core:base:$base_version",
+            "org.projectlombok:lombok:$lombok_version",
+            "com.fasterxml.jackson.core:jackson-core:$jack_version",
+            "com.fasterxml.jackson.core:jackson-annotations:$jack_version"
+
+    )
+
+    // fastjson
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.58'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+
+}

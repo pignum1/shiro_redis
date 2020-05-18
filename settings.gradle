@@ -1,0 +1,6 @@
+rootProject.name = 'nacos_base4j'
+include 'entity'
+include 'dao'
+include 'service'
+include 'controller'
+
