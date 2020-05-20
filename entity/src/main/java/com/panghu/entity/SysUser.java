@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
 @Entity
 @Table(name = "sys_user")
 @EntityListeners(AuditingEntityListener.class)
-public class SysUser extends BaseUUIDEntity {
+public class SysUser extends BaseUUIDEntity implements Serializable {
     /**
      * 登陆帐户
      */
@@ -125,6 +126,9 @@ public class SysUser extends BaseUUIDEntity {
 
     @Column(name = "salt")
     private String salt;
+
+    @Column
+    private String state="0";
 
 
     @ElementCollection(fetch = FetchType.EAGER )
@@ -314,5 +318,13 @@ public class SysUser extends BaseUUIDEntity {
 
     public void setRoles(List<SysRole> roles) {
         this.roles = roles;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }
